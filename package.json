@@ -1,0 +1,17 @@
+{
+  "name": "kb-document",
+  "version": "0.1.0",
+  "private": true,
+  "description": "KScript / Kooboo 远程开发社区文档站，基于 VitePress 与 GitHub Pages。",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs --port 3033",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}

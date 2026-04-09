@@ -1,0 +1,66 @@
+:root {
+  --vp-c-brand-1: #0f766e;
+  --vp-c-brand-2: #0b5f59;
+  --vp-c-brand-3: #159089;
+  --vp-c-brand-soft: rgba(15, 118, 110, 0.14);
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(120deg, #0f766e 0%, #2563eb 55%, #f59e0b 100%);
+  --vp-home-hero-image-background-image:
+    radial-gradient(circle at 30% 30%, rgba(37, 99, 235, 0.24), transparent 42%),
+    radial-gradient(circle at 70% 20%, rgba(245, 158, 11, 0.26), transparent 35%),
+    radial-gradient(circle at 50% 70%, rgba(15, 118, 110, 0.28), transparent 48%);
+  --vp-home-hero-image-filter: blur(54px);
+}
+
+.VPHomeHero .image-bg {
+  opacity: 0.95;
+}
+
+.VPFeature {
+  border: 1px solid rgba(15, 118, 110, 0.1);
+}
+
+.kb-home-section {
+  margin: 2rem 0;
+  padding: 1.4rem 1.2rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(248, 250, 252, 0.94)),
+    linear-gradient(135deg, rgba(15, 118, 110, 0.04), rgba(37, 99, 235, 0.03));
+}
+
+.dark .kb-home-section {
+  border-color: rgba(148, 163, 184, 0.16);
+  background:
+    linear-gradient(180deg, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.94)),
+    linear-gradient(135deg, rgba(15, 118, 110, 0.12), rgba(37, 99, 235, 0.08));
+}
+
+.kb-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.kb-card {
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+}
+
+.dark .kb-card {
+  background: rgba(15, 23, 42, 0.56);
+  border-color: rgba(148, 163, 184, 0.14);
+}
+
+.kb-card h3,
+.kb-home-section h2 {
+  margin-top: 0;
+}
+
+.kb-note {
+  font-size: 0.95rem;
+  color: var(--vp-c-text-2);
+}
