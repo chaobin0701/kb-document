@@ -1,6 +1,6 @@
 ---
 title: Layout
-description: 说明 `src/Layout` 在远程开发中的基本作用，以及本地开发时需要特别注意的地方。
+description: 说明 `src/Layout` 或 `src/layout` 的作用和真实项目里的常见写法。
 prev:
   text: CodeBlock
   link: /kooboo-remote/codeblock
@@ -11,55 +11,43 @@ next:
 
 # Layout
 
-## 更适合解决
+`src/Layout` 或 `src/layout` 用来放布局模板。
 
-- 判断布局层该承载哪些公共结构
-- 放置鉴权、重定向和全局变量注入
-- 区分模板层与纯前端布局文件
+真实项目里的 layout 往往不只是壳子，而是资源总装层。项目里也可能同时存在多套 layout，例如 `common` 和 `template`。
 
-## 常见对象
+它经常负责：
 
-- `src/Layout`
-- `<script env="server">`
-- `k-placeholder`
+- head / body 基础结构
+- 全局 CSS 与 JS 引用
+- 公共 `<view id="...">` 挂载
+- `k-placeholder="main"` 或 `k-placeholder="Main"` 这样的页面占位
 
-## 不要混淆
+## 本地开发时要注意
 
-- `Layout` 不是纯前端壳子
-- 这里可以包含服务端逻辑，但不适合堆大量业务代码
-
-## 下一步阅读
-
-- [Page](/kooboo-remote/page)
-- [AI 远程开发补充说明](/kooboo-remote/ai-remote-dev-notes)
-
-## 远程开发下的基本作用
-
-`src/Layout` 更适合负责：
-
-- HTML 基础结构
-- head / body 公共部分
-- 占位符
-- 服务端准备逻辑
-
-如果有鉴权、重定向、全局变量注入，这一层通常是更稳的放置位置。
-
-## 本地开发时要特别注意什么
-
-- 本地看到的是模板文件，但远端可能会执行其中的服务端脚本
-- 服务端脚本应明确标注 `env="server"`
-- 服务端到客户端的数据注入更适合集中处理
+- 模板里可能同时有普通标签、`<view id="...">` 和服务端脚本
+- 服务端脚本要明确标注 `env="server"`
+- 这一层适合放公共资源装配，不适合堆具体业务逻辑
+- `placeholder` 的大小写要跟现有项目保持一致
+- 公共 head、navigation、footer、vue 挂载点通常都在这里装配
 
 ## 代码示例
 
 ```html
-<!-- src/Layout/main.html -->
+<!DOCTYPE html>
+<html lang="en">
+<view id="common/head"></view>
+<body class="min-w-[375px]">
 <script env="server">
-  if (!k.account.currentUser) {
-    k.response.redirect("/login");
-    k.response.stop();
+  if (k.content.GTM?.body) {
+    k.response.write(k.content.GTM.body);
   }
 </script>
-
+<view id="common/navigation"></view>
 <div k-placeholder="Main"></div>
+<view id="common/footer"></view>
+<view id="vue/before"></view>
+<view id="vue/store"></view>
+<view id="vue/components"></view>
+</body>
+</html>
 ```

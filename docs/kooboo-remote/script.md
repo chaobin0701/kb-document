@@ -1,6 +1,6 @@
 ---
 title: Script
-description: 说明 `src/Script` 在远程开发中的基本作用，以及本地开发时需要特别注意的地方。
+description: 说明 `src/Script` 或 `src/js` 的作用和真实项目里的引用方式。
 prev:
   text: View
   link: /kooboo-remote/view
@@ -11,45 +11,28 @@ next:
 
 # Script
 
-## 更适合解决
+`src/Script` 或 `src/js` 用来放客户端脚本和第三方库。
 
-- 放置客户端脚本和第三方库
-- 组织轻量前端工具代码
-- 区分客户端资源和服务端脚本
+真实项目里这些文件通常会直接映射成站点资源路径，例如：
 
-## 常见对象
+- `src/js/axios.js` -> `/axios.js`
+- `src/js/http.js` -> `/http.js`
+- `src/js/custom.js` -> `/custom.js`
+- `src/js/axios/min.js` -> `/axios/min.js`
+- `src/js/vee-validate/iife.js` -> `/vee-validate/iife.js`
 
-- `src/Script`
-- 第三方库
-- 页面脚本
+## 本地开发时要注意
 
-## 不要混淆
-
-- `Script` 默认是客户端资源目录
 - 不要在这里写服务端 `k.*`
-
-## 下一步阅读
-
-- [Style](/kooboo-remote/style)
-- [UnoCSS](/kooboo-remote/unocss)
-
-## 远程开发下的基本作用
-
-`src/Script` 更适合承载：
-
-- 页面通过 `<script src="...">` 引入的脚本
-- 第三方库
-- 轻量前端工具函数
-
-## 本地开发时要特别注意什么
-
-- 命名尽量扁平，优先用点号表达分组
-- 不要在这里写服务端 `k.*`
+- 先看 layout 里怎么引用，再决定文件名
 - 第三方库升级要谨慎，远端加载顺序可能影响结果
+- 如果项目已经用了子目录，就直接沿用，不要强行压平
 
 ## 代码示例
 
 ```html
-<script src="/vendor.vue-router.js"></script>
+<script src="/axios/min.js"></script>
 <script src="/http.js"></script>
+<script src="/custom.js" defer=""></script>
+<script src="/vee-validate/iife.js"></script>
 ```

@@ -43,3 +43,10 @@ if (k.file.exists("filename.txt")) {
 var bytes = k.file.readBinary("file.pdf");
 var info = k.file.writeBinary("newname.pdf", bytes);
 ```
+
+```ts
+const file = k.request.files[0];
+const saveDir = `user_upload/${k.utils.date.utcNow.getFullYear()}`;
+const fileInfo = k.file.writeBinary(`${saveDir}/${file.fileName}`, file.bytes);
+k.response.json({ url: fileInfo.absoluteUrl });
+```

@@ -29,7 +29,10 @@
    - `/Users/a1234/Desktop/kooboo-cli/kscript-docs`
    - `/Users/a1234/Desktop/kooboo-cli/examples`
    - `/Users/a1234/Desktop/kooboo-cli/skills`
-5. Kooboo 官方站点中的概念和术语
+5. 真实项目源码
+   - `/Users/a1234/Desktop/kooboo-projects/tabs/src`
+   - `/Users/a1234/Desktop/kooboo-projects/Ubuntu-Mundo/src`
+6. Kooboo 官方站点中的概念和术语
 
 如果这些来源之间有冲突，以用户最新纠正为准。
 
@@ -58,6 +61,7 @@
 
 - 这一栏以远程开发为主，本地开发为辅。
 - 每个目录单独成页，不要再把多个目录混成一页。
+- 目录语义可以稳定，但目录名、大小写、子目录组织都可能因项目而异。
 - 推荐粒度保持为：
   - `Api`
   - `CodeBlock`
@@ -71,6 +75,10 @@
 - 写法顺序固定为：
   1. 先解释远程开发下的基本作用
   2. 再写本地开发时的特殊性与注意点
+- `Page` 默认按“很薄的入口层”理解。
+- `View` 可以很重，也可以继续分层，不要强行要求扁平。
+- `Script` 不默认禁止子目录，先跟随项目已有结构。
+- `UnoCSS` 要明确扫描兜底资源这一层，不只写“不要动态拼 class”。
 
 ### `docs/module-library`
 
@@ -105,7 +113,8 @@
 
 - 优先把示例放到最合适的两类位置：
   - 对象说明页
-  - `docs/module-library/code-patterns.md`
+  - `docs/module-library/code/*`
+  - `docs/module-library/modules/*`
 - 如果一段代码既能说明 API，又值得长期复用，可以两边都放，但表达角度要不同：
   - API 页更偏对象说明
   - 案例页更偏组织方式和复用价值
@@ -114,6 +123,7 @@
   - 减少入口层负担
   - 避免敏感信息直写
   - 更适合 AI 二次编程复用
+- 如果示例来自真实项目，必须先去掉真实密码、Token、邮箱口令等敏感值
 
 ## 用户持续纠正文档时的处理方式
 

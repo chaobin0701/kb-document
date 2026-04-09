@@ -1,12 +1,12 @@
 # KScript & Kooboo Docs
 
-一个基于 GitHub + VitePress 的 KScript / Kooboo 远程开发文档站项目，用来承载团队现有的规范、工作流、示例和协作约定。
+一个基于 GitHub + VitePress 的 KScript / Kooboo 文档站项目，用来承载团队现有的规范、真实项目经验和可复用代码模式。
 
 这个仓库的目标不是复制原始 Markdown，而是把已有资料整理成适合长期维护的知识库：
 
 - 用主题化目录替代仓库内部编号式文档
 - 用 GitHub PR 维护文档，而不是把规范散落在多个仓库
-- 用首页、导航、贡献指南和更新日志强化“团队共建”体验
+- 用结构化栏目和真实项目回填持续修正文档
 
 ## 为什么独立成 docs 仓库
 
@@ -17,12 +17,11 @@
 
 ## 文档范围
 
-- KScript 运行时能力与开发规则
-- Kooboo 远程开发工作流与目录语义
-- 分层实践与示例
-- Prompt 与协作规范
-- 团队技能与站点接管流程
-- 贡献方式与变更记录
+- KScript 运行时能力
+- 内容系统与 CMS 建模语义
+- Kooboo 远程开发目录规则
+- AI 使用提示词与导航索引
+- 可复用代码模式
 
 ## 本地启动
 
@@ -49,16 +48,14 @@ npm run docs:preview
 ├── .github/workflows/deploy.yml
 ├── docs
 │   ├── .vitepress
-│   ├── changelog
-│   ├── collaboration
-│   ├── contributing
-│   ├── examples
-│   ├── getting-started
+│   ├── ai-kooboo-dev
+│   ├── ai-navigation
+│   ├── content-system
 │   ├── kooboo-remote
 │   ├── kscript
-│   ├── runtime-semantics
-│   └── team-skills
+│   └── module-library
 ├── package.json
+├── AGENTS.md
 └── README.md
 ```
 
@@ -95,6 +92,8 @@ npm run docs:preview
 - `/Users/a1234/Desktop/kooboo-cli/kooboo-docs/src/*.md`
 - `/Users/a1234/Desktop/kooboo-cli/kscript-docs/*.md`
 - `/Users/a1234/Desktop/kooboo-cli/skills/kooboo-clone-site/*`
+- `/Users/a1234/Desktop/kooboo-projects/tabs/src`
+- `/Users/a1234/Desktop/kooboo-projects/Ubuntu-Mundo/src`
 
 迁移原则：
 

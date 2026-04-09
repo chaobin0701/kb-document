@@ -22,7 +22,7 @@ next:
 | 我要找经过校验的技能 | [推荐 Skills](/ai-kooboo-dev/skills) | 先复用稳定 skills |
 | 我要找已验证方案 | [模块案例库](/module-library/) | 优先参考已有模块和优秀代码 |
 | 我要理解项目目录是什么意思 | [AI 远程开发补充说明](/kooboo-remote/ai-remote-dev-notes) | 先判断目录语义和运行时边界 |
-| 我要写一个可复用模块 | [优秀代码](/module-library/code-patterns) | 先看已有模式，再决定结构 |
+| 我要写一个可复用模块 | [优秀模块](/module-library/modules/) | 先看已有模块和代码分类，再决定结构 |
 
 ## 代码示例
 
@@ -31,6 +31,6 @@ next:
 const questionMap = {
   "我要读请求参数": "/kscript/request-response",
   "我要新增内容字段": "/content-system/content-types-and-data-types",
-  "我要做一个可复用模块": "/module-library/code-patterns"
+  "我要做一个可复用模块": "/module-library/modules/"
 };
 ```

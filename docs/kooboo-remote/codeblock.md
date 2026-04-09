@@ -1,6 +1,6 @@
 ---
 title: CodeBlock
-description: 说明 `src/CodeBlock` 在远程开发中的基本作用，以及本地开发时需要特别注意的地方。
+description: 说明 `src/CodeBlock` 或 `src/code` 的作用和真实项目里常见的组织方式。
 prev:
   text: Api
   link: /kooboo-remote/api
@@ -11,55 +11,40 @@ next:
 
 # CodeBlock
 
-## 更适合解决
+`src/CodeBlock` 或 `src/code` 更适合放服务端可复用逻辑。
 
-- 沉淀服务端可复用逻辑
-- 组织模型、服务和工具函数
-- 把业务逻辑从入口层拆出来
+真实项目里通常不只会放 service 和 utils，还会继续分成：
 
-## 常见对象
+- `controller` / `control`
+- `model`
+- `module`
+- `types`
+- `env`
+- `Script`
+- 第三方能力封装
 
-- `src/CodeBlock`
-- Models
-- Services
-- Utils
+这里经常承载邮件、支付、多语言、内容查询、数据库模型这些基础能力。
 
-## 不要混淆
+## 本地开发时要注意
 
-- `CodeBlock` 更像服务端可复用层，不是接口入口
-- 这里适合放业务逻辑，不适合承担页面模板职责
-
-## 下一步阅读
-
-- [Layout](/kooboo-remote/layout)
-- [模块案例库](/module-library/)
-
-## 远程开发下的基本作用
-
-`src/CodeBlock` 更适合承载：
-
-- Models
-- Services
-- Utils
-- 可复用的服务端逻辑
-
-如果一个逻辑将来可能在多个入口复用，更适合先放在 `CodeBlock`。
-
-## 本地开发时要特别注意什么
-
-- 本地可以把它当作服务和模型区，但最终仍然跑在 Kooboo 服务端环境里
-- 能通过参数传入的东西，尽量不要在底层函数里直接耦合 `k.*`
-- 响应格式、错误格式更适合集中处理，不要散落在很多文件里
-- 如果项目已有直接使用 `k.*` 的服务层写法，更适合先延续现状，再逐步抽离
+- 服务层可以直接使用 Kooboo 运行时，但要控制边界，不要把响应输出散落到各处
+- 能集中做的格式化、错误处理、公共返回结构，尽量放在这里
+- 真实项目里的命名不一定统一成单一英文词，`control`、`model`、`env`、`Script` 都很常见
+- 如果项目已经有现成分层，就直接沿用
 
 ## 代码示例
 
 ```ts
-// src/CodeBlock/Services/user.ts
-export function createUser(input: { name: string }) {
+export function successResponse(data?: any) {
   return {
-    id: Date.now().toString(),
-    name: input.name
+    code: 0,
+    data,
+    msg: "success"
   };
+}
+
+export function errorResponse(msg: string, code = -1, status = 400) {
+  k.response.json({ code, msg });
+  return k.api.httpCode(status);
 }
 ```

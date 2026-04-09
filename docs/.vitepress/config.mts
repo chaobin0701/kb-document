@@ -95,7 +95,12 @@ export default defineConfig({
           text: '模块案例库',
           items: [
             { text: '导览', link: '/module-library/' },
-            { text: '优秀代码', link: '/module-library/code-patterns' }
+            { text: '优秀代码', link: '/module-library/code/' },
+            { text: 'API 与表单', link: '/module-library/code/api' },
+            { text: '邮件发送', link: '/module-library/code/mail' },
+            { text: 'View 动态渲染', link: '/module-library/code/view-render' },
+            { text: '优秀模块', link: '/module-library/modules/' },
+            { text: 'sqlite_orm', link: '/module-library/modules/sqlite-orm' }
           ]
         }
       ],

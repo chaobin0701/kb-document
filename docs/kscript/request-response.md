@@ -11,27 +11,6 @@ next:
 
 # Request Response
 
-## 更适合解决
-
-- 读取请求参数
-- 读取表单、Header 和上传文件
-- 输出 JSON、文本、文件和重定向
-
-## 常见对象
-
-- `k.request`
-- `k.response`
-
-## 不要混淆
-
-- 这里解决的是运行时请求与响应对象
-- 不要把 CMS 内容对象和模板层规则混进这一页
-
-## 下一步阅读
-
-- [Web API](/kscript/web-api)
-- [内容系统](/content-system/)
-
 ## `k.request`
 
 `k.request` 是读取请求数据的入口。
@@ -84,4 +63,30 @@ k.response.setHeader("Access-Control-Allow-Origin", "*");
 k.response.redirect("/relativepath");
 k.response.statusCode(301);
 k.response.notFound();
+```
+
+```ts
+const body = JSON.parse(k.request.body || "{}");
+if (!body.email) {
+  k.response.statusCode(400);
+  k.response.json({ code: -1, msg: "email is required" });
+  k.response.stop();
+}
+```
+
+```ts
+const { name, email, message } = k.request;
+if (!name || !email || !message) {
+  k.response.json({ code: -1, msg: "missing fields" });
+  k.response.stop();
+}
+```
+
+```ts
+const file = k.request.files[0];
+if (!file) {
+  k.response.statusCode(400);
+  k.response.json({ code: -1, msg: "file is required" });
+  k.response.stop();
+}
 ```

@@ -45,3 +45,37 @@ k.api.get(function () {
   return k.api.badRequest()
 })
 ```
+
+```ts
+//@k-url /api/auth/{action}
+k.api.post("/register", () => {
+  const body = JSON.parse(k.request.body || "{}");
+  if (!body.email) {
+    return k.api.badRequest();
+  }
+  return {
+    code: 0,
+    msg: "success"
+  };
+});
+```
+
+```ts
+//@k-url /api/contact
+k.api.post(() => {
+  const { name, email, message } = k.request;
+  return {
+    code: 0,
+    data: { name, email, message }
+  };
+});
+```
+
+```ts
+k.api.put("user", () => {
+  return {
+    code: 0,
+    msg: "updated"
+  };
+});
+```

@@ -27,3 +27,13 @@ k.state.set("key", obj);
 k.state.setCurrent("key", obj);
 k.response.json(k.state.get("key"))
 ```
+
+```ts
+const section = k.state.get("section");
+for (const component of section.Components || []) {
+  k.state.set("component", component);
+  k.response.write(
+    k.utils.template.render(`<view id="${component._viewName}"></view>`)
+  );
+}
+```

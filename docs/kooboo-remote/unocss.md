@@ -1,6 +1,6 @@
 ---
 title: UnoCSS
-description: 说明 UnoCSS 在 Kooboo 远程开发中的基本作用，以及本地开发时需要特别注意的地方。
+description: 说明 UnoCSS 在 Kooboo 远程开发中的用法和真实项目里的常见兜底方式。
 prev:
   text: Module
   link: /kooboo-remote/module
@@ -11,43 +11,30 @@ next:
 
 # UnoCSS
 
-## 更适合解决
+Kooboo 里的 UnoCSS 更适合理解成预扫描和预生成的样式方案。
 
-- 理解 UnoCSS 在 Kooboo 里的工作方式
-- 判断 class 写法哪些安全，哪些容易失效
-- 管理 shortcuts、safelist 和自定义规则
+它会扫描模板和视图里的类名，然后生成 CSS，不是浏览器运行时动态生成。
 
-## 常见对象
+真实项目里为了确保扫描命中，常见做法是额外放扫描兜底资源，把一些容易漏掉的类名预埋进去，例如：
 
-- UnoCSS 类名
-- `unocss-conifg`
-- shortcuts
-- safelist
+- `style-cache.html`
+- `class-name-preloading.html`
 
-## 不要混淆
-
-- UnoCSS 在这里更像预扫描和预渲染结果
-- 不要假设浏览器端会动态计算和生成 class
-
-## 下一步阅读
-
-- [AI 远程开发补充说明](/kooboo-remote/ai-remote-dev-notes)
-- [模块案例库](/module-library/)
-
-## 远程开发下的基本作用
-
-UnoCSS 更适合被理解成站点里的默认样式方案之一。它会预扫描模板和视图里的 class，然后生成 CSS，而不是在浏览器里动态计算。
-
-## 本地开发时要特别注意什么
+## 本地开发时要注意
 
 - 不要依赖动态拼接 class
-- 更适合写静态类名或有限集合分支
+- 如果必须有动态场景，要准备静态兜底或缓存承载
 - 自定义规则、shortcuts、safelist 更适合集中放在 `unocss-conifg`
+- 按钮类、排版类、容器类都适合提前放到扫描兜底资源里
 
 ## 代码示例
 
-```ts
-const buttonClass = isPrimary
-  ? "bg-blue-600 text-white px-4 py-2"
-  : "bg-gray-100 text-gray-900 px-4 py-2";
+```html
+<div>
+  <p class="text-c-sm text-c-base text-c-lg text-c-xl text-c-hero"></p>
+  <p class="gap-middle gap-none gap-small"></p>
+  <p class="max-w-c-default max-w-c-small max-w-c-large"></p>
+  <button class="btn-primary bg-c-blue border-c-blue text-c-white"></button>
+  <button class="btn-primary bg-c-red border-c-red text-c-white"></button>
+</div>
 ```
