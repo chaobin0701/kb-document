@@ -5,7 +5,7 @@ prev:
   text: Utils
   link: /kscript/utils
 next:
-  text: 内容类型与数据类型
+  text: 内容/Content
   link: /content-system/content-types-and-data-types
 ---
 
@@ -40,9 +40,10 @@ next:
 
 ## 阅读顺序
 
-1. [内容类型与数据类型](/content-system/content-types-and-data-types)
-2. [标签与 HTML Block](/content-system/labels-and-html-blocks)
-3. [电商配置与内容关联](/content-system/commerce-and-settings)
+1. [内容/Content](/content-system/content-types-and-data-types)
+2. [标签/Label](/content-system/labels)
+3. [HTML Block](/content-system/html-blocks)
+4. [电商/Commerce](/content-system/commerce-and-settings)
 
 ## 代码示例
 
@@ -50,7 +51,7 @@ next:
 // 内容入口
 var blogs = k.content.Blog.all();
 
-// 标签与 HTML Block
+// Label 与 HTML Block
 var title = k.site.labels.getValue("site.title");
 var hero = k.site.htmlBlocks.getValue("home.hero");
 ```

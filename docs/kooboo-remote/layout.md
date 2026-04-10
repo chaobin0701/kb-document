@@ -35,19 +35,19 @@ next:
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<view id="common/head"></view>
+<view id="common.head"></view>
 <body class="min-w-[375px]">
 <script env="server">
   if (k.content.GTM?.body) {
     k.response.write(k.content.GTM.body);
   }
 </script>
-<view id="common/navigation"></view>
+<view id="common.navigation"></view>
 <div k-placeholder="Main"></div>
-<view id="common/footer"></view>
-<view id="vue/before"></view>
-<view id="vue/store"></view>
-<view id="vue/components"></view>
+<view id="common.footer"></view>
+<view id="vue.before"></view>
+<view id="vue.store"></view>
+<view id="vue.components"></view>
 </body>
 </html>
 ```

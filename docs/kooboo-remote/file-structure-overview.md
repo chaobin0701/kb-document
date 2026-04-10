@@ -33,6 +33,12 @@ next:
 - `src/code/control`
 - `src/code/Script`
 
+这些目录在文件系统里虽然继续分层，但在引用时通常会转成点号形式，例如：
+
+- `view/common/head.html` -> `common.head`
+- `view/page-element/common/title.html` -> `page-element.common.title`
+- `view/_page/home.html` -> `_page.home`
+
 ## 本地开发时要注意
 
 - 最终可信结果仍然来自远端站点

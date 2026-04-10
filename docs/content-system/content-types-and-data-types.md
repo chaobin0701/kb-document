@@ -1,15 +1,15 @@
 ---
-title: 内容类型与数据类型
+title: 内容/Content
 description: 说明 Content Type、Content Folder、内容实例与字段数据类型之间的关系。
 prev:
   text: 内容系统
   link: /content-system/
 next:
-  text: 标签与 HTML Block
-  link: /content-system/labels-and-html-blocks
+  text: 标签/Label
+  link: /content-system/labels
 ---
 
-# 内容类型与数据类型
+# 内容/Content
 
 `Content Type`、`Content Folder` 和 `Content` 分别对应三层不同的概念：
 

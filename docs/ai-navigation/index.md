@@ -2,8 +2,8 @@
 title: AI 导航索引
 description: 为 AI 和开发者提供对象、问题、术语与阅读顺序的快速导航入口。
 prev:
-  text: AI Kooboo 开发
-  link: /ai-kooboo-dev/
+  text: Kooboo 远程开发
+  link: /kooboo-remote/
 next:
   text: 对象与能力索引
   link: /ai-navigation/object-capability-index

@@ -1,12 +1,12 @@
 ---
 title: 开箱提示词
-description: 可直接复制给 AI 使用的 Kooboo 开发提示词模板。
+description: 可直接复制给 AI 使用的 Kooboo 远程开发开箱提示词。
 prev:
-  text: AI Kooboo 开发
-  link: /ai-kooboo-dev/
+  text: AI 远程开发补充说明
+  link: /kooboo-remote/ai-remote-dev-notes
 next:
   text: 推荐 Skills
-  link: /ai-kooboo-dev/skills
+  link: /kooboo-remote/recommended-skills
 ---
 
 # 开箱提示词
@@ -27,7 +27,7 @@ https://github.com/chaobin0701/kb-document
 
 开始工作前，请先完成这些步骤：
 1. 阅读 kooboo.d.ts，理解 k.* 的能力面
-2. 阅读文档站中的 /kscript/、/content-system/、/kooboo-remote/、/module-library/
+2. 阅读文档站中的 /kscript/、/template-engine/、/content-system/、/kooboo-remote/、/module-library/
 3. 阅读当前项目里与目标最接近的已有实现
 4. 判断这是怎样的 Kooboo 项目，先理解目录结构和运行时边界
 

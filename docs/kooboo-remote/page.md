@@ -26,6 +26,7 @@ next:
 - 真实项目里很多 page 文件只有几行
 - `layout id`、`placeholder id`、`view id` 的写法要直接跟随现有项目
 - 大小写也要保持一致，不要自行改成另一个习惯
+- 如果 page 或 view 做了分级，引用时通常用点号，不用 `/`
 
 ## 代码示例
 
@@ -33,7 +34,7 @@ next:
 <!-- @k-url / -->
 <layout id="template">
   <placeholder id="Main">
-    <view id="_page/home"></view>
+    <view id="_page.home"></view>
   </placeholder>
 </layout>
 ```

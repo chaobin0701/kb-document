@@ -9,6 +9,9 @@ export default defineConfig({
   title: 'KScript & Kooboo Docs',
   description: '面向团队协作的 KScript / Kooboo 远程开发知识库。',
   base,
+  head: [
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }]
+  ],
   cleanUrls: true,
   lastUpdated: true,
   themeConfig: {
@@ -16,11 +19,16 @@ export default defineConfig({
     siteTitle: 'KScript & Kooboo Docs',
     nav: [
       { text: '首页', link: '/' },
-      { text: 'KScript', link: '/kscript/' },
-      { text: '内容系统', link: '/content-system/' },
-      { text: 'AI Kooboo 开发', link: '/ai-kooboo-dev/' },
-      { text: '模块案例库', link: '/module-library/' },
-      { text: 'Kooboo 远程开发', link: '/kooboo-remote/' }
+      {
+        text: 'Kooboo 说明文档',
+        items: [
+          { text: 'KScript', link: '/kscript/' },
+          { text: '模板引擎', link: '/template-engine/' },
+          { text: 'Kooboo 内容系统', link: '/content-system/' }
+        ]
+      },
+      { text: 'Kooboo 远程开发', link: '/kooboo-remote/' },
+      { text: '模块案例库', link: '/module-library/' }
     ],
     sidebar: {
       '/kscript/': [
@@ -55,6 +63,10 @@ export default defineConfig({
           text: 'Kooboo 远程开发',
           items: [
             { text: '项目说明', link: '/kooboo-remote/' },
+            { text: 'kb 命令', link: '/kooboo-remote/kb-commands' },
+            { text: 'AI 远程开发补充说明', link: '/kooboo-remote/ai-remote-dev-notes' },
+            { text: '开箱提示词', link: '/kooboo-remote/ai-prompts' },
+            { text: '推荐 Skills', link: '/kooboo-remote/recommended-skills' },
             { text: '目录与文件作用总览', link: '/kooboo-remote/file-structure-overview' },
             { text: 'Api', link: '/kooboo-remote/api' },
             { text: 'CodeBlock', link: '/kooboo-remote/codeblock' },
@@ -64,29 +76,30 @@ export default defineConfig({
             { text: 'Script', link: '/kooboo-remote/script' },
             { text: 'Style', link: '/kooboo-remote/style' },
             { text: 'Module', link: '/kooboo-remote/module' },
-            { text: 'UnoCSS', link: '/kooboo-remote/unocss' },
-            { text: 'AI 远程开发补充说明', link: '/kooboo-remote/ai-remote-dev-notes' }
+            { text: 'UnoCSS', link: '/kooboo-remote/unocss' }
+          ]
+        }
+      ],
+      '/template-engine/': [
+        {
+          text: '模板引擎',
+          items: [
+            { text: '导览', link: '/template-engine/' },
+            { text: 'Concept', link: '/template-engine/concept' },
+            { text: 'V 模板语法', link: '/template-engine/server-template-syntax' },
+            { text: 'K 模板语法', link: '/template-engine/k-directives' }
           ]
         }
       ],
       '/content-system/': [
         {
-          text: '内容系统',
+          text: 'Kooboo 内容系统',
           items: [
             { text: '导览', link: '/content-system/' },
-            { text: '内容类型与数据类型', link: '/content-system/content-types-and-data-types' },
-            { text: '标签与 HTML Block', link: '/content-system/labels-and-html-blocks' },
-            { text: '电商配置与内容关联', link: '/content-system/commerce-and-settings' }
-          ]
-        }
-      ],
-      '/ai-kooboo-dev/': [
-        {
-          text: 'AI Kooboo 开发',
-          items: [
-            { text: '导览', link: '/ai-kooboo-dev/' },
-            { text: '开箱提示词', link: '/ai-kooboo-dev/prompts' },
-            { text: '推荐 Skills', link: '/ai-kooboo-dev/skills' }
+            { text: '内容/Content', link: '/content-system/content-types-and-data-types' },
+            { text: '标签/Label', link: '/content-system/labels' },
+            { text: 'HTML Block', link: '/content-system/html-blocks' },
+            { text: '电商/Commerce', link: '/content-system/commerce-and-settings' }
           ]
         }
       ],

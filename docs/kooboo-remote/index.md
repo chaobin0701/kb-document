@@ -36,6 +36,8 @@ next:
 - `utils`
 - `template-xxx`
 
+这套远程开发结构本身就很适合配合 AI 工作，因为目录语义、运行时边界和模板组织方式都比较明确。
+
 ## 基础使用
 
 仓库说明里的核心使用流程包括：
@@ -72,6 +74,7 @@ pnpm dev
 
 如果你要看目录和文件在远程开发中的实际作用，可以继续阅读：
 
+- [kb 命令](/kooboo-remote/kb-commands)
 - [目录与文件作用总览](/kooboo-remote/file-structure-overview)
 - [Api](/kooboo-remote/api)
 - [CodeBlock](/kooboo-remote/codeblock)
@@ -83,3 +86,5 @@ pnpm dev
 - [Module](/kooboo-remote/module)
 - [UnoCSS](/kooboo-remote/unocss)
 - [AI 远程开发补充说明](/kooboo-remote/ai-remote-dev-notes)
+- [开箱提示词](/kooboo-remote/ai-prompts)
+- [推荐 Skills](/kooboo-remote/recommended-skills)

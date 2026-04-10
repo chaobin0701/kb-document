@@ -25,16 +25,16 @@ next:
 - 入口层尽量保持薄，主要负责读参数、校验、调用服务层、输出响应
 - 不要默认写成 `req` / `res` 或 `ctx` 风格
 - 项目如果已经采用某一种接口风格，就优先延续邻近实现
-- 真实项目里常见 `import ... from "code/..."` 这类别名导入
+- `CodeBlock` 如果做了分级目录，导入时经常是点号写法，例如 `control.mail`、`model.contact`
 - 除普通 JSON 接口外，也常见上传、Webhook、支付回调、订阅回调这类特殊入口
 
 ## 代码示例
 
 ```ts
 //@k-url /api/contact
-import { successResponse, errorResponse } from "code/Utils";
-import contactModel from "code/Model/contact";
-import { sendEmail } from "code/control/mail";
+import { successResponse, errorResponse } from "Utils";
+import contactModel from "model.contact";
+import { sendEmail } from "control.mail";
 
 k.api.post(() => {
   try {
@@ -50,7 +50,7 @@ k.api.post(() => {
 
 ```ts
 //@k-url /api/auth/{action}
-import { successResponse, errorResponse } from "code/Utils";
+import { successResponse, errorResponse } from "Utils";
 
 k.api.post("/register", () => {
   const body = JSON.parse(k.request.body || "{}");
@@ -63,7 +63,7 @@ k.api.post("/register", () => {
 
 ```ts
 //@k-url /api/upload
-import { getFilePath, errorResponse, successResponse } from "code/Utils";
+import { getFilePath, errorResponse, successResponse } from "Utils";
 
 k.api.post(() => {
   try {

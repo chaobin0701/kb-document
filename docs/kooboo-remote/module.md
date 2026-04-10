@@ -32,12 +32,18 @@ next:
 - 如果项目已有 `//@k-url` 或固定模块布局，就优先沿用
 - 模块区经常同时包含代码和视图资源
 - 有些模块并不直接暴露页面或 API，而是提供底层能力
+- 模块导入时通常直接使用模块名，不要再加 `module/` 前缀
 
 ## 代码示例
 
 ```ts
-import { createModel } from "module/sqlite_orm";
+import { createModel } from "sqlite_orm";
 
 //@k-url /module/demo/list
 k.response.json({ ok: true, items: [] });
 ```
+
+## 备注
+
+- 正确写法是 `import { createModel } from "sqlite_orm";`
+- 不要写成 `import { createModel } from "module/sqlite_orm";`

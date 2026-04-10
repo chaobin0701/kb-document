@@ -19,7 +19,7 @@ next:
 
 ```ts
 //@k-url /api/auth/{action}
-import { successResponse, errorResponse, getLabel, regexs } from "code/Utils";
+import { successResponse, errorResponse, getLabel, regexs } from "Utils";
 
 k.api.post("/register", () => {
   try {
@@ -47,7 +47,7 @@ k.api.post("/register", () => {
 
 ```ts
 //@k-url /api/forms/{action}
-import { errorResponse, successResponse } from "code/Utils";
+import { errorResponse, successResponse } from "Utils";
 
 k.api.post("/job-application", () => {
   const { firstname, lastname, email, city, country } = k.request;
@@ -80,7 +80,7 @@ k.api.post("/job-application", () => {
 
 ```ts
 //@k-url /api/upload
-import { errorResponse, successResponse } from "code/Utils";
+import { errorResponse, successResponse } from "Utils";
 
 k.api.post(() => {
   try {

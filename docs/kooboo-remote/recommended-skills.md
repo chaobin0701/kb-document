@@ -1,9 +1,9 @@
 ---
 title: 推荐 Skills
-description: 收录适合 Kooboo 开发场景、并且经过验证值得优先使用的 skills。
+description: 收录适合 Kooboo 远程开发场景、并且经过验证值得优先使用的 skills。
 prev:
   text: 开箱提示词
-  link: /ai-kooboo-dev/prompts
+  link: /kooboo-remote/ai-prompts
 next:
   text: 模块案例库
   link: /module-library/

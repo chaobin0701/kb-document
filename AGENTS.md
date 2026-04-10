@@ -11,9 +11,9 @@
 当前站点重点围绕这些栏目维护：
 
 - `docs/kscript`
+- `docs/template-engine`
 - `docs/content-system`
 - `docs/kooboo-remote`
-- `docs/ai-kooboo-dev`
 - `docs/module-library`
 - `docs/ai-navigation`
 
@@ -56,6 +56,14 @@
 
 - 这一栏负责 CMS 相关对象和建模语义。
 - 例如：`Label`、`HTML Block`、`Content Type`、`Content Folder`、电商配置与内容关系。
+- `k-label` 虽然写在模板里，但归内容系统维护，因为它本质上是 Label 的页面绑定方式。
+
+### `docs/template-engine`
+
+- 这一栏负责 Kooboo 模板引擎、服务端模板语法和模板层指令。
+- 模板层问题优先看这里，不要混进 `KScript`。
+- `k-attribute`、`k-for`、`k-if` 这类模板语法归这里维护。
+- `k-label` 不放这里，归 `docs/content-system`。
 
 ### `docs/kooboo-remote`
 
@@ -71,10 +79,11 @@
   - `Script`
   - `Style`
   - `Module`
-  - `UnoCSS`
+- `UnoCSS`
 - 写法顺序固定为：
   1. 先解释远程开发下的基本作用
   2. 再写本地开发时的特殊性与注意点
+- AI 接手项目时使用的提示词和推荐 skills 也整合在这一栏维护。
 - `Page` 默认按“很薄的入口层”理解。
 - `View` 可以很重，也可以继续分层，不要强行要求扁平。
 - `Script` 不默认禁止子目录，先跟随项目已有结构。
@@ -87,11 +96,6 @@
   - `优秀代码`
 - 不再恢复“优秀模块”“收录规范”这类页，除非用户明确要求。
 - 这里更像“优先参考代码库”，不是完整模块市场。
-
-### `docs/ai-kooboo-dev`
-
-- 这一栏用于存放可直接给 AI 使用的提示词和经过验证的 skills。
-- 更关注“如何让 AI 快速进入正确上下文”，不是对象定义。
 
 ### `docs/ai-navigation`
 

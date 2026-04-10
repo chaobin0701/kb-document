@@ -13,24 +13,24 @@ hero:
       text: 浏览 KScript
       link: /kscript/
     - theme: alt
-      text: 浏览内容系统
+      text: 浏览 Kooboo 内容系统
       link: /content-system/
 
 features:
   - title: KScript
     details: 聚合请求、响应、API、模型与扩展能力，便于快速查阅和团队引用。
     link: /kscript/
-  - title: 内容系统
+  - title: 模板引擎
+    details: 聚焦 Kooboo 服务端模板、TPL + VUE 语法、k-* 指令和真实项目里的模板写法。
+    link: /template-engine/
+  - title: Kooboo 内容系统
     details: 聚焦内容类型、内容实例、标签、HTML Block 与电商配置之间的关系。
     link: /content-system/
-  - title: AI Kooboo 开发
-    details: 提供可直接使用的提示词和已经验证过的 skills，帮助 AI 更快进入正确上下文。
-    link: /ai-kooboo-dev/
   - title: 模块案例库
     details: 收录优秀模块、优秀代码和可复用方案，为开发者和 AI 提供优先参考。
     link: /module-library/
   - title: Kooboo 远程开发
-    details: 用目录语义、模板层约束、模块与 UnoCSS 规则解释“代码放在哪就决定怎么跑”。
+    details: 用目录语义、模板层约束、模块与 UnoCSS 规则解释“代码放在哪就决定怎么跑”，也包含 AI 接手项目时的提示词和 skills。
     link: /kooboo-remote/
 ---
 
@@ -60,16 +60,12 @@ features:
     <p>把 API 入口、模板层、业务层和 DTO 校验层拆开讲，减少远端验证时的回归面。</p>
   </div>
   <div class="kb-card">
-    <h3>内容系统</h3>
+    <h3>Kooboo 内容系统</h3>
     <p>把 Content Type、Label、HTML Block 和电商配置放回 CMS 语境，而不是混进脚本 API 列表里。</p>
   </div>
   <div class="kb-card">
     <h3>模块案例库</h3>
     <p>把优秀模块、代码片段和成熟解法沉淀下来，方便开发者复用，也方便 AI 在二次开发时优先参考。</p>
-  </div>
-  <div class="kb-card">
-    <h3>AI Kooboo 开发</h3>
-    <p>把提示词、skills 和可直接复用的 AI 开发入口整理成工作台，减少每次重复解释背景。</p>
   </div>
 </div>
 
@@ -80,11 +76,12 @@ features:
 ## 推荐阅读路径
 
 1. 先读 [KScript](/kscript/) 理解运行时对象和脚本入口。
-2. 再读 [内容系统](/content-system/) 理解内容类型、Label、HTML Block 和电商配置。
-3. 如果不知道该看哪一页，先用 [AI 导航索引](/ai-navigation/) 快速定位。
-4. 如果要让 AI 更快进入正确上下文，进入 [AI Kooboo 开发](/ai-kooboo-dev/)。
-5. 如果要寻找成熟模块、优秀代码和可复用方案，进入 [模块案例库](/module-library/)。
-6. 如果要落到项目资源目录，再看 [Kooboo 远程开发](/kooboo-remote/) 和 [目录规范 / 运行时语义](/runtime-semantics/)。
+2. 再读 [模板引擎](/template-engine/) 理解服务端模板语法、k-* 指令和 `k-label`。
+3. 再读 [Kooboo 内容系统](/content-system/) 理解内容类型、Label、HTML Block 和电商配置。
+4. 如果不知道该看哪一页，先用 [AI 导航索引](/ai-navigation/) 快速定位。
+5. 如果要让 AI 更快进入正确上下文，进入 [Kooboo 远程开发](/kooboo-remote/) 里的开箱提示词和 skills。
+6. 如果要寻找成熟模块、优秀代码和可复用方案，进入 [模块案例库](/module-library/)。
+7. 如果要落到项目资源目录，再看 [Kooboo 远程开发](/kooboo-remote/) 和 [目录规范 / 运行时语义](/runtime-semantics/)。
 
 </div>
 
@@ -94,8 +91,8 @@ features:
 
 - 当前主要维护五块内容：
   - KScript
-  - 内容系统
-  - AI Kooboo 开发
+  - 模板引擎
+  - Kooboo 内容系统
   - 模块案例库
   - Kooboo 远程开发
 - 其他栏目暂时保留文件，但不作为主导航的一部分。
@@ -112,6 +109,7 @@ features:
 当前阶段更重要的是先把下面这些概念讲明白：
 
 - KScript 是什么
+- 模板层和服务端模板语法怎么工作
 - `k.*` 里哪些对象属于运行时 API
 - 哪些对象其实属于 CMS 内容系统
 - 模板层、内容层和电商配置层之间怎么分工

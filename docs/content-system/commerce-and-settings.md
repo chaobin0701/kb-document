@@ -1,15 +1,15 @@
 ---
-title: 电商配置与内容关联
+title: 电商/Commerce
 description: 说明电商模块配置、内容建模与 k.commerce.settings 的关系。
 prev:
-  text: 标签与 HTML Block
-  link: /content-system/labels-and-html-blocks
+  text: HTML Block
+  link: /content-system/html-blocks
 next:
   text: Kooboo 远程开发导览
   link: /kooboo-remote/
 ---
 
-# 电商配置与内容关联
+# 电商/Commerce
 
 Kooboo 的电商能力不能只理解成一组 `k.commerce.*` API。更准确的理解应该是：
 

@@ -2,7 +2,7 @@
 title: 模块案例库
 description: 收录已经写顺、值得重复参考的代码模式，作为开发者与 AI 的优先参考库。
 prev:
-  text: 电商配置与内容关联
+  text: 电商/Commerce
   link: /content-system/commerce-and-settings
 next:
   text: 优秀代码

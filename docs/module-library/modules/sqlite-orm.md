@@ -46,12 +46,12 @@ src/module/sqlite_orm
 
 ## 导入方式
 
-模块导入时直接使用模块名即可，不需要把路径继续写到 `code/index`。
+模块导入时直接使用模块名即可，不需要把路径继续写到 `code/index`，也不需要写 `module/` 前缀。
 
 ## 代码示例
 
 ```ts
-import { createModel } from "module/sqlite_orm";
+import { createModel } from "sqlite_orm";
 
 export const adminModel = createModel("admin", {
   user_id: {
@@ -108,6 +108,7 @@ if (row) {
 
 - 这个模块底层仍然是 `k.DB.sqlite`
 - 默认入口会自动指向模块的主导出，不需要手动写 `code/index`
+- 导入时直接写 `sqlite_orm`
 - `timestamps: true` 时会自动补时间字段
 - 字段校验是通过 schema 里的 `validate(...)` 完成的
 - 文档示例保留真实用法方向，但字段和业务对象可以按项目自行调整
