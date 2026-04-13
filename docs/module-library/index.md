@@ -5,8 +5,8 @@ prev:
   text: 电商/Commerce
   link: /content-system/commerce-and-settings
 next:
-  text: 优秀代码
-  link: /module-library/code/
+  text: API 与表单
+  link: /module-library/code/api
 ---
 
 # 模块案例库
@@ -21,5 +21,8 @@ next:
 
 ## 当前收录
 
-- [`优秀代码`](/module-library/code/)
-- [`优秀模块`](/module-library/modules/)
+- [`API 与表单`](/module-library/code/api)
+- [`网站搜索`](/module-library/code/search)
+- [`邮件发送`](/module-library/code/mail)
+- [`View 动态渲染`](/module-library/code/view-render)
+- [`sqlite_orm`](/module-library/modules/sqlite-orm)

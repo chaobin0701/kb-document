@@ -2,11 +2,11 @@
 title: API 与表单
 description: 收录 API 注册、统一返回、表单校验和上传接口这类常用代码模式。
 prev:
-  text: 优秀代码
-  link: /module-library/code/
+  text: 模块案例库
+  link: /module-library/
 next:
-  text: 邮件发送
-  link: /module-library/code/mail
+  text: 网站搜索
+  link: /module-library/code/search
 ---
 
 # API 与表单

@@ -63,7 +63,7 @@ export default defineConfig({
           text: 'Kooboo 远程开发',
           items: [
             { text: '项目说明', link: '/kooboo-remote/' },
-            { text: 'kb 命令', link: '/kooboo-remote/kb-commands' },
+            { text: 'kbs 命令', link: '/kooboo-remote/kb-commands' },
             { text: 'AI 远程开发补充说明', link: '/kooboo-remote/ai-remote-dev-notes' },
             { text: '开箱提示词', link: '/kooboo-remote/ai-prompts' },
             { text: '推荐 Skills', link: '/kooboo-remote/recommended-skills' },
@@ -108,11 +108,10 @@ export default defineConfig({
           text: '模块案例库',
           items: [
             { text: '导览', link: '/module-library/' },
-            { text: '优秀代码', link: '/module-library/code/' },
             { text: 'API 与表单', link: '/module-library/code/api' },
+            { text: '网站搜索', link: '/module-library/code/search' },
             { text: '邮件发送', link: '/module-library/code/mail' },
             { text: 'View 动态渲染', link: '/module-library/code/view-render' },
-            { text: '优秀模块', link: '/module-library/modules/' },
             { text: 'sqlite_orm', link: '/module-library/modules/sqlite-orm' }
           ]
         }

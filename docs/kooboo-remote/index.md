@@ -1,6 +1,6 @@
 ---
 title: Kooboo 远程开发
-description: "`kooboo-cli` 是 Kooboo 本地远程开发环境的核心项目。"
+description: "`kooboo-cli-self` 是当前持续维护中的 Kooboo 本地远程开发环境项目。"
 prev:
   text: 目录规范与运行时语义
   link: /runtime-semantics/
@@ -11,11 +11,11 @@ next:
 
 # Kooboo 远程开发
 
-`kooboo-cli` 是 Kooboo 本地远程开发环境的核心项目，用来把本地代码编辑、编译和远程站点同步连接起来。
+`kooboo-cli-self` 是当前持续维护中的 Kooboo 本地远程开发环境项目，用来把本地代码编辑、编译和远程站点同步连接起来。
 
 ## 项目地址
 
-- 仓库地址：[https://cnb.cool/kooboo.com/kooboo-cli/cli](https://cnb.cool/kooboo.com/kooboo-cli/cli)
+- 仓库地址：[https://github.com/chaobin0701/kooboo-cli-self](https://github.com/chaobin0701/kooboo-cli-self)
 
 ## 项目定位
 
@@ -27,7 +27,7 @@ next:
 - 提供 KScript 类型和相关开发支撑
 - 提供预设模板和工具包，方便快速建立项目
 
-从仓库首页说明看，主要包包括：
+从当前仓库说明看，主要包包括：
 
 - `cli`
 - `compile`
@@ -46,7 +46,7 @@ next:
 2. 使用 `pnpm` 安装依赖
 3. 编译项目
 4. 将 `packages/cli` 链接到全局
-5. 使用 `kb` 命令进行建站、克隆和同步
+5. 使用 `kbs` 命令进行建站、克隆、同步和部署
 
 ## 常用命令
 
@@ -58,9 +58,13 @@ cd packages/cli
 pnpm setup
 pnpm link -g
 
-kb new [serverUrl]
-kb clone <siteUrl>
-kb sync
+kbs new [site-name]
+kbs clone <site-url>
+kbs pull
+kbs push
+kbs deploy <files...>
+kbs label pull
+kbs sync
 pnpm dev
 ```
 

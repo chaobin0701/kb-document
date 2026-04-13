@@ -2,8 +2,8 @@
 title: sqlite_orm
 description: 一个基于 `k.DB.sqlite` 的常用模块，用来快速创建表模型并封装常见 CRUD。
 prev:
-  text: 优秀模块
-  link: /module-library/modules/
+  text: View 动态渲染
+  link: /module-library/code/view-render
 ---
 
 # sqlite_orm

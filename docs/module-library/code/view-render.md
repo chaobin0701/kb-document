@@ -5,8 +5,8 @@ prev:
   text: 邮件发送
   link: /module-library/code/mail
 next:
-  text: 优秀模块
-  link: /module-library/modules/
+  text: sqlite_orm
+  link: /module-library/modules/sqlite-orm
 ---
 
 # View 动态渲染
